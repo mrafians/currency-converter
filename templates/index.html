@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+
+    <!-- Javascript Files on 'static/js/' Folder -->
+    <script src="{{ url_for('static', filename='js/ui-handler.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <!-- CDN Packages -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center justify-center h-screen mx-4">
+
+    <div>
+        <h1 class="text-4xl mb-9 font-bold mb-2 text-center">Currency Converter</h1>
+    </div>
+
+    <div class="bg-white p-8 rounded-[10px] shadow-md w-auto h-auto">
+        <div class="grid lg:grid-cols-3 w-auto h-auto gap-4">
+
+            <!-- First Input Form -->
+            <div class="grid items-center justify-between h-auto border border-gray-300 shadow-sm focus:ring focus:ring-white focus:outline-none w-full">
+                <div id="dropdown_button_one" class="bg-gray-200 hover:bg-gray-300 px-3 py-2 h-full">
+                    <div class="flex align-center justify-center relative">
+                        <button class="text-lg font-bold cursor-pointer">IDR - Indonesian Rupiah</button>
+
+                        <ul id="dropdown_options_one" class="absolute top-7 z-150 mt-2 bg-white shadow-lg w-full max-h-60 overflow-y-auto hidden">
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="py-1 px-4">
+                    <input id="currency_one" oninput="converter()" type="number" class="w-full h-9 text-lg font-bold focus:ring focus:ring-white focus:outline-none" min="0" placeholder="Enter Amount" />
+                </div>
+            </div>
+
+            <!-- Second Input Form -->
+            <div class="grid items-center justify-between h-auto border border-gray-300 shadow-sm focus:ring focus:ring-white focus:outline-none">
+                <div id="dropdown_button_two" class="bg-gray-200 hover:bg-gray-300 px-3 py-2 h-full">
+                    <div class="flex align-center justify-center relative">
+                        <button class="text-lg font-bold cursor-pointer">USD - US Dollar</button>
+
+                        <ul id="dropdown_options_two" class="absolute top-7 z-100 mt-2 bg-white shadow-lg w-full max-h-60 overflow-y-auto hidden">
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="py-1 px-4">
+                    <input id="currency_two" oninput="converter()" type="number" disabled class="w-full h-9 text-lg font-bold focus:ring focus:ring-white focus:outline-none" min="0" />
+                </div>
+            </div>
+
+            <!-- Third Input Form -->
+            <div class="grid items-center justify-between h-auto border border-gray-300 shadow-sm focus:ring focus:ring-white focus:outline-none">
+                <div id="dropdown_button_three" class="bg-gray-200 hover:bg-gray-300 px-3 py-2 h-full">
+                    <div class="flex align-center justify-center relative">
+                        <button class="text-lg font-bold cursor-pointer">EUR - Euro</button>
+
+                        <ul id="dropdown_options_three" class="absolute top-7 z-50 mt-2 bg-white shadow-lg w-full max-h-60 overflow-y-auto hidden">
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="py-1 px-4">
+                    <input id="currency_three" oninput="converter()" type="number" disabled class="w-full h-9 text-lg font-bold focus:ring focus:ring-white focus:outline-none" min="0" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+
+</html>
